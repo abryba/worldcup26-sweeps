@@ -5,7 +5,7 @@
     "groupName": "TE + Invaders World Cup 26 Sweeps",
     "playerWord": "player",
     "playerWordPlural": "players",
-    "lastUpdated": "2026-06-10T10:49:29.740Z"
+    "lastUpdated": "2026-06-11T12:10:35.949Z"
   },
   "teams": [
     {
@@ -394,13 +394,44 @@
     }
   ],
   "boys": [
-    ""
+    "Azzy",
+    "Ady",
+    "Benji",
+    "Dan",
+    "Dandan",
+    "Daniel",
+    "Eden",
+    "Greg B",
+    "Greg E",
+    "Jason C",
+    "Jason Spy",
+    "Jordy",
+    "Kessel",
+    "Vern",
+    "Levels",
+    "Lush"
   ],
   "draw": {
     "completed": false,
-    "order": [],
-    "allocations": {},
-    "locked": false
+    "order": [
+      "Lush",
+      "Dandan",
+      "Azzy",
+      "Ady",
+      "Eden",
+      "Benji",
+      "Greg B",
+      "Jason Spy",
+      "Kessel",
+      "Jason C",
+      "Levels",
+      "Vern",
+      "Jordy",
+      "Dan",
+      "Daniel",
+      "Greg E"
+    ],
+    "allocations": {}
   },
   "champion": null,
   "schedule": [
