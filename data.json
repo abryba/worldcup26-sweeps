@@ -5,7 +5,8 @@
     "groupName": "TE + Invaders World Cup 26 Sweeps",
     "playerWord": "player",
     "playerWordPlural": "players",
-    "lastUpdated": "2026-06-11T12:16:43.244Z"
+    "lastUpdated": "2026-06-11T12:16:43.244Z",
+    "lastResultSync": "2026-06-11T22:45:59.598136+00:00"
   },
   "teams": [
     {
@@ -527,11 +528,11 @@
       "t2": "rsa",
       "ref1": null,
       "ref2": null,
-      "s1": null,
-      "s2": null,
+      "s1": 2,
+      "s2": 0,
       "p1": null,
       "p2": null,
-      "status": "scheduled"
+      "status": "finished"
     },
     {
       "num": 2,
