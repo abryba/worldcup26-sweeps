@@ -5,7 +5,7 @@
     "groupName": "TE + Invaders World Cup 26 Sweeps",
     "playerWord": "player",
     "playerWordPlural": "players",
-    "lastUpdated": "2026-06-11T12:10:35.949Z"
+    "lastUpdated": "2026-06-11T12:15:02.245Z"
   },
   "teams": [
     {
@@ -412,7 +412,7 @@
     "Lush"
   ],
   "draw": {
-    "completed": false,
+    "completed": true,
     "order": [
       "Lush",
       "Dandan",
@@ -431,7 +431,88 @@
       "Daniel",
       "Greg E"
     ],
-    "allocations": {}
+    "allocations": {
+      "Lush": [
+        "rsa",
+        "sui",
+        "arg"
+      ],
+      "Dandan": [
+        "jor",
+        "swe",
+        "uru"
+      ],
+      "Azzy": [
+        "cur",
+        "par",
+        "cro"
+      ],
+      "Ady": [
+        "sco",
+        "alg",
+        "bra"
+      ],
+      "Eden": [
+        "cpv",
+        "nor",
+        "col"
+      ],
+      "Benji": [
+        "uzb",
+        "pan",
+        "usa"
+      ],
+      "Greg B": [
+        "cod",
+        "cze",
+        "ger"
+      ],
+      "Jason Spy": [
+        "gha",
+        "aut",
+        "fra"
+      ],
+      "Kessel": [
+        "ksa",
+        "tur",
+        "sen"
+      ],
+      "Jason C": [
+        "tun",
+        "ecu",
+        "eng"
+      ],
+      "Levels": [
+        "hai",
+        "kor",
+        "mex"
+      ],
+      "Vern": [
+        "qat",
+        "egy",
+        "ned"
+      ],
+      "Jordy": [
+        "bih",
+        "jpn",
+        "esp"
+      ],
+      "Dan": [
+        "civ",
+        "aus",
+        "bel"
+      ],
+      "Daniel": [
+        "nzl",
+        "irn",
+        "por"
+      ],
+      "Greg E": [
+        "irq",
+        "can",
+        "mar"
+      ]
+    }
   },
   "champion": null,
   "schedule": [
