@@ -5,7 +5,7 @@
     "groupName": "TE + Invaders World Cup 26 Sweeps",
     "playerWord": "player",
     "playerWordPlural": "players",
-    "lastUpdated": "2026-06-11T12:15:02.245Z"
+    "lastUpdated": "2026-06-11T12:16:43.244Z"
   },
   "teams": [
     {
@@ -512,7 +512,8 @@
         "can",
         "mar"
       ]
-    }
+    },
+    "locked": true
   },
   "champion": null,
   "schedule": [
