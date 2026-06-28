@@ -15,7 +15,7 @@ change) may need applying to the other**.
 
 - Vanilla HTML/CSS/JS, no build step. `index.html` + `style.css` + `app.js`.
 - State lives in `data.json`, synced to GitHub via a Personal Access Token (admin only).
-- Hosted on GitHub Pages; results auto-update via a GitHub Action.
+- Hosted on GitHub Pages; live results are read client-side from ESPN's public scoreboard.
 
 ## Files
 
@@ -25,8 +25,8 @@ change) may need applying to the other**.
 | `style.css` | Stadium-broadcast theme + guide styling |
 | `app.js` | Draw, scoring, groups, bracket, Match Centre, GitHub sync, branding |
 | `data.json` | Source of truth: teams (48), schedule (104), players, draw, results. Ships as a clean slate. |
-| `scripts/update_results.py` | Pulls results from openfootball, fills the schedule, derives alive/out + champion |
-| `.github/workflows/update-results.yml` | Runs the updater every ~20 min during the tournament + on demand |
+| `scripts/update_results.py` | Historical reference only (openfootball-based). No longer run or used since 2026-06-28; live results now come from ESPN inside `app.js`. |
+| `.github/workflows/update-results.yml` | Historical reference only (ran the openfootball updater). Superseded 2026-06-28 by client-side ESPN reads in `app.js`. |
 | `Set-Up-Your-World-Cup-Sweep.docx` | Plain-English setup guide to send to a non-technical user |
 
 ## What differs from the original (the genericisation)
@@ -67,12 +67,22 @@ No token = read-only view of the latest committed data.
 
 ## Auto-updating results
 
-The GitHub Action runs `scripts/update_results.py` every ~20 min during the tournament
-window (and on demand from the Actions tab). It pulls the public
-[openfootball/worldcup.json](https://github.com/openfootball/worldcup.json) feed (no API key),
-fills scores, resolves the bracket, derives alive/out + champion, and commits `data.json`
-only if something changed. Semi-live: latency = openfootball lag + the 20-min cron.
-Manual fallback: set results by hand on the **Teams** tab.
+Live results are built client-side in `app.js` from a single ESPN source.
+`buildSchedule(espn)` reads everything from ESPN's public scoreboard in one fetch: it
+numbers events 1..104 by ascending `event.id` (a self-consistent order), reads each match's
+stage from `season.slug`, the group letter from `data.json`, and the teams / score / status
+from the competitors. Knockout slot labels like "Round of 32 3 Winner" are turned into the
+existing `W<num>`/`L<num>` bracket refs. From this the app derives alive/out + champion.
+Semi-live: latency = ESPN lag. Manual fallback: set results by hand on the **Teams** tab.
+
+openfootball was dropped on 2026-06-28. Previously the app took fixture/bracket structure
+from openfootball and overlaid live scores from ESPN, but openfootball's knockout bracket
+wiring lagged the group results by hours (it left Round-of-32 slots as placeholders like
+"1I" or "3A/B/C/D/F" after the group stage), which made the qualification logic wrongly mark
+qualified teams as OUT. ESPN resolves the knockout teams immediately, so it is now the single
+data source. Note: ESPN orders knockout matches differently from openfootball, so the bracket
+numbering is now ESPN's own. The separate openfootball fetch and the score-overlay helpers
+were removed. `scripts/update_results.py` (openfootball-based) is no longer run or used.
 
 ## Notes / gotchas
 
