@@ -72,7 +72,7 @@ Live results are built client-side in `app.js` from a single ESPN source.
 numbers events 1..104 by ascending `event.id` (a self-consistent order), reads each match's
 stage from `season.slug`, the group letter from `data.json`, and the teams / score / status
 from the competitors. Knockout slot labels like "Round of 32 3 Winner" are turned into the
-existing `W<num>`/`L<num>` bracket refs. From this the app derives alive/out + champion.
+existing `W<num>`/`L<num>` bracket refs. From this the app derives alive/out + champion. Bracket rendering (`bracketOrder()`): the Knockout tab stacks ties in true bracket order. ESPN drops a slot's "winner of match N" ref once its feeder finishes, so finished ties are kept in their correct slot by matching each resolved team back to the prior-round match it won (fixed 2026-06-29 — previously a tie vanished from its column the moment it was played).
 Semi-live: latency = ESPN lag. Manual fallback: set results by hand on the **Teams** tab.
 
 openfootball was dropped on 2026-06-28. Previously the app took fixture/bracket structure
